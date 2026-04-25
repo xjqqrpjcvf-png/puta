@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>mini site</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        color: #222;
+        text-align: center;
+        padding-top: 80px;
+    }
+
+    h1, h2, p {
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 12px 22px;
+        margin: 10px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    .yes { background: #4caf50; color: white; }
+    .no { background: #f44336; color: white; }
+
+    .big {
+        transform: scale(1.6);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.6);
+        padding: 30px;
+        margin: auto;
+        width: 300px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="card">
+    <h1>Hi pouta </h1>
+    <p>Press push😏</p>
+    <button onclick="nextPage()">bi</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="card hidden">
+    <h2>wsh toi cv ?</h2>
+    <button onclick="goNext()">no nik mv</button>
+    <button onclick="goNext()">bah lvdmm que heh</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="card hidden">
+    <h2>You still mad ?</h2>
+
+    <button class="yes" onclick="finalPage()">oui rouh ta3ti</button>
+    <button class="no" id="noBtn" onclick="growNo()">no</button>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="card hidden">
+    <h1>i hate being your friend Hallelujah ✨</h1>
+</div>
+
+<script>
+
+function nextPage() {
+    document.getElementById("page1").classList.add("hidden");
+    document.getElementById("page2").classList.remove("hidden");
+}
+
+function goNext() {
+    document.getElementById("page2").classList.add("hidden");
+    document.getElementById("page3").classList.remove("hidden");
+}
+
+function finalPage() {
+    document.getElementById("page3").classList.add("hidden");
+    document.getElementById("page4").classList.remove("hidden");
+}
+
+function growNo() {
+    let btn = document.getElementById("noBtn");
+    btn.classList.toggle("big");
+}
+
+</script>
+
+</body>
+</html>
